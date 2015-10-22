@@ -1,0 +1,1 @@
+var KeyDispatcher = new FluxDispatcher();
