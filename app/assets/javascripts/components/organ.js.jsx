@@ -14,9 +14,3 @@ var Organ = React.createClass({
     );
   }
 });
-
-$(function () {
-  React.render(
-    <Organ />, document.getElementById('content')
-  );
-});
