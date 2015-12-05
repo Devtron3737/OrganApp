@@ -5,7 +5,7 @@ var Track = React.createClass({
 
   startRecording: function () {
     this.roll = [];
-    this.startTime = new Date()
+    this.startTime = TimeUtil.currentTime
   },
 
   addNotes: function (currentTime, notes) {
@@ -19,10 +19,24 @@ var Track = React.createClass({
   },
 
   stopRecording: function () {
-    this.addNotes(new Date(), [])
+    this.addNotes(TimeUtil.currentTime, [])
   },
 
   play: function () {
-    
+    if (this.interval) {
+      return;
+    }
+
+    var currentNote = 0,
+        playBackStartTime = TimeUtil.currentTime()
+
+
+    this.interval = setInterval( function () {
+      if (currentNote <= this.roll.length) {
+        if (this.roll[currentNote].timeSlice > (TimeUtil.currentTime - playBackStartTime)) {
+
+        }
+      }
+    }, 1)
   }
 })
