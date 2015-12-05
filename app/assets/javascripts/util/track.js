@@ -36,7 +36,6 @@ Track.prototype = {
         playBackStartTime = TimeUtil.currentTime(),
         that = this;
 
-
     this.interval = setInterval( function () {
       if (currentNote <= that.roll.length) {
         if (that.roll[currentNote].timeSlice > (TimeUtil.currentTime() - playBackStartTime)) {

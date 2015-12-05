@@ -21,8 +21,6 @@ $(function () {
   var handleKeyChange = function (e) {
     // checks that key pressed is a valid note
     if ($.inArray(String(e.which), Object.keys(keyNoteNames)) === -1) {
-      console.log("invalid key press");
-      console.log(String(e.which));
       return;
     }
 
