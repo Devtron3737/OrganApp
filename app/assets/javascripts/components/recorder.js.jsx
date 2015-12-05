@@ -29,7 +29,7 @@ var Recorder = React.createClass({
   },
 
   handlePlay: function () {
-
+    this.state.track.play()
   },
 
   render: function () {

@@ -28,7 +28,7 @@ var Track = React.createClass({
     }
 
     var currentNote = 0,
-        playBackStartTime = TimeUtil.currentTime()
+        playBackStartTime = TimeUtil.currentTime();
 
 
     this.interval = setInterval( function () {
