@@ -20,5 +20,9 @@ var Track = React.createClass({
 
   stopRecording: function () {
     this.addNotes(new Date(), [])
+  },
+
+  play: function () {
+    
   }
 })

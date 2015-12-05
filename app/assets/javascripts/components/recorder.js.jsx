@@ -28,11 +28,16 @@ var Recorder = React.createClass({
     this.setState({isRecording: false})
   },
 
+  handlePlay: function () {
+
+  },
+
   render: function () {
     return(
       <div>
         <button onClick={this.handleRecord} id='record-button' value='Record'/>
-        <button onClick={this.handleStopRecord} id='stop-record-button' value='Stop' />
+        <button onClick={this.handleStopRecord} id='stop-record-button' value='Stop Recording' />
+        <button onClick={this.handlePlay} id='stop-record-button' value='Play' />
       </div>
     )
   }
