@@ -6,21 +6,19 @@ var Track = React.createClass({
   startRecording: function () {
     this.roll = [];
     this.startTime = new Date()
-
   },
 
-  addNotes: function (timeSlice, notes) {
+  addNotes: function (currentTime, notes) {
     // timeSlice is time elapsed since start of recording
     // notes is array of note names, ex: ["A3", "G4"...]
     var currentNotes = {
-      timeSlice: timeSlice,
+      timeSlice: currentTime - this.startTime,
       notes: notes
     }
     this.roll.push(currentNotes)
   },
 
   stopRecording: function () {
-    var timeSlice = (new Date()) - this.startTime
-    this.addNotes(timeSlice, [])
+    this.addNotes(new Date(), [])
   }
 })

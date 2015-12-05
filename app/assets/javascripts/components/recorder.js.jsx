@@ -6,6 +6,18 @@ var Recorder = React.createClass({
     }
   },
 
+  componentDidMount: function () {
+    KeyStore.addChangeListener(this._onKeyChange)
+  },
+
+  componentWillUnmount: function () {
+    KeyStore.removeChangeListener(this._onKeyChange)
+  },
+
+  _onKeyChange: function () {
+    this.state.track.addNotes(new Date(), KeyStore.all())
+  },
+
   handleRecord: function () {
     this.state.track.startRecording()
     this.setState({isRecording: true})
