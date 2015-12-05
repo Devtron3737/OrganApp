@@ -16,6 +16,7 @@ var Recorder = React.createClass({
 
   _onKeyChange: function () {
     this.state.track.addNotes(new Date(), KeyStore.all())
+    console.log('in onKeyChange')
   },
 
   handleRecord: function () {
@@ -35,9 +36,9 @@ var Recorder = React.createClass({
   render: function () {
     return(
       <div>
-        <button onClick={this.handleRecord} id='record-button' value='Record'/>
-        <button onClick={this.handleStopRecord} id='stop-record-button' value='Stop Recording' />
-        <button onClick={this.handlePlay} id='stop-record-button' value='Play' />
+        <input type='button' onClick={this.handleRecord} id='record-button' value='record' />
+        <input type='button' onClick={this.handleStopRecord} id='stop-record-button'value='stop record' />
+        <input type='button' onClick={this.handlePlay} id='play-button'value='play' />
       </div>
     )
   }

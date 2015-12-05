@@ -1,11 +1,14 @@
-var Track = React.createClass({
-  componentDidMount: function () {
-    this.name = ""
-  },
+function Track () {
+  this.roll = []
+}
 
+Track.prototype = {
   startRecording: function () {
     this.roll = [];
-    this.startTime = TimeUtil.currentTime
+    this.startTime = TimeUtil.currentTime()
+    console.log('in tracks start recoding')
+    console.log(TimeUtil.currentTime())
+    console.log(this.startTime)
   },
 
   addNotes: function (currentTime, notes) {
@@ -16,10 +19,12 @@ var Track = React.createClass({
       notes: notes
     }
     this.roll.push(currentNotes)
+    console.log('in tracks addNotes. heres the roll')
+    console.log(this.roll)
   },
 
   stopRecording: function () {
-    this.addNotes(TimeUtil.currentTime, [])
+    this.addNotes(TimeUtil.currentTime(), [])
   },
 
   play: function () {
@@ -28,19 +33,20 @@ var Track = React.createClass({
     }
 
     var currentNote = 0,
-        playBackStartTime = TimeUtil.currentTime();
+        playBackStartTime = TimeUtil.currentTime(),
+        that = this;
 
 
     this.interval = setInterval( function () {
-      if (currentNote <= this.roll.length) {
-        if (this.roll[currentNote].timeSlice > (TimeUtil.currentTime - playBackStartTime)) {
-          TrackActions.addKeysGroup(this.roll[currentNote].notes)
+      if (currentNote <= that.roll.length) {
+        if (that.roll[currentNote].timeSlice > (TimeUtil.currentTime() - playBackStartTime)) {
+          TrackActions.addKeysGroup(that.roll[currentNote].notes)
           currentNote++
         }
       } else {
-        clearInterval(this.interval)
-        delete this.interval
+        clearInterval(that.interval)
+        delete that.interval
       }
     }, 1)
   }
-})
+}
