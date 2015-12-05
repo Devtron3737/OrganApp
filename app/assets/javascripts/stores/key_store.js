@@ -35,6 +35,9 @@
           case "key_released":
             KeyStore.removeKey(payLoad.noteName);
             break;
+          case "key_group_update":
+            KeyStore.replaceKeys(payLoad.keyGroup);
+            break;
         }
       }),
 
@@ -56,6 +59,11 @@
           }
         }
         this.emit(CHANGE_EVENT);
+      },
+
+      replaceKeys: function (keys) {
+        _keys = keys;
+        this.emit(CHANGE_EVENT)
       },
 
 // install  emitters and listeners

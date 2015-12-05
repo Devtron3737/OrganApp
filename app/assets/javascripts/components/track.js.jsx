@@ -34,8 +34,12 @@ var Track = React.createClass({
     this.interval = setInterval( function () {
       if (currentNote <= this.roll.length) {
         if (this.roll[currentNote].timeSlice > (TimeUtil.currentTime - playBackStartTime)) {
-
+          TrackActions.addKeysGroup(this.roll[currentNote].notes)
+          currentNote++
         }
+      } else {
+        clearInterval(this.interval)
+        delete this.interval
       }
     }, 1)
   }
