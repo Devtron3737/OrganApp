@@ -13,7 +13,7 @@
       $.ajax({
         url: "/tracks",
         method: POST,
-        data: roll,
+        data: {track: roll},
         success: function (tracks) {
           Dispatcher.dispatch({
             actionType: "update_tracks",
