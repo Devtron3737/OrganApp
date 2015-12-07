@@ -7,6 +7,20 @@
           actionType: "key_group_update",
           keyGroup: keys
       })
+    },
+
+    save: function (roll) {
+      $.ajax({
+        url: "/tracks",
+        method: POST,
+        data: roll,
+        success: function (tracks) {
+          KeyDispatcher.dispatch({
+            actionType: "update_tracks",
+            tracks: tracks
+          })
+        }
+      })
     }
   }
 })(this);

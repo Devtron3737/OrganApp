@@ -1,5 +1,5 @@
-function Track () {
-  this.roll = []
+function Track (roll) {
+  this.roll = roll || [];
 }
 
 Track.prototype = {
@@ -45,5 +45,9 @@ Track.prototype = {
         delete that.interval;
       }
     }, 1)
+  },
+
+  roll: function () {
+    return this.roll.slice()
   }
 }

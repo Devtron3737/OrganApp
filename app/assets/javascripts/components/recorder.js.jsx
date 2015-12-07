@@ -29,13 +29,19 @@ var Recorder = React.createClass({
     this.state.track.play()
   },
 
+  handleSave: function () {
+    console.log('in handle save')
+    console.log(this.state.track.roll)
+    TrackActions.save(this.state.track.roll)
+  },
+
   render: function () {
     return(
       <div>
         <input type='button' onClick={this.handleRecord} id='record-button' value='record' />
         <input type='button' onClick={this.handleStopRecord} id='stop-record-button'value='stop record' />
         <input type='button' onClick={this.handlePlay} id='play-button'value='play' />
-        <input type='button' onClick={this.handleStop} id='stop-button'value='stop' />
+        <input type='button' onClick={this.handleSave} id='save-button'value='save' />
       </div>
     )
   }
