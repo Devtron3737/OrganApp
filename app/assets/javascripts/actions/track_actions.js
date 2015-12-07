@@ -3,7 +3,7 @@
     // add a group update of notes, so that the
     // whole keystore gets replaced
     addKeysGroup: function (keys) {
-      KeyDispatcher.dispatch({
+      Dispatcher.dispatch({
           actionType: "key_group_update",
           keyGroup: keys
       })
@@ -15,7 +15,7 @@
         method: POST,
         data: roll,
         success: function (tracks) {
-          KeyDispatcher.dispatch({
+          Dispatcher.dispatch({
             actionType: "update_tracks",
             tracks: tracks
           })

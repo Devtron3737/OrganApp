@@ -25,7 +25,7 @@
 // were also registering all of our stores responses
 // here. response depends on the message type.
 
-      dispatcherId: KeyDispatcher.register(function (payLoad) {
+      dispatcherId: Dispatcher.register(function (payLoad) {
         //payload has a actionType and noteName
         switch (payLoad.actionType) {
 // chage cases based on payLoad actionTypes

@@ -6,7 +6,7 @@
     {},
     EventEmitter.prototype,
     {
-      // dispatcherId: KeyDispatcher.register( function (payLoad) {
+      // dispatcherId: Dispatcher.register( function (payLoad) {
       //   switch (payLoad.actionType) {
       //     case
       //   }

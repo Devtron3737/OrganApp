@@ -1,1 +1,1 @@
-var KeyDispatcher = new FluxDispatcher();
+var Dispatcher = new FluxDispatcher();
