@@ -6,9 +6,6 @@ Track.prototype = {
   startRecording: function () {
     this.roll = [];
     this.startTime = TimeUtil.currentTime()
-    console.log('in tracks start recoding')
-    console.log(TimeUtil.currentTime())
-    console.log(this.startTime)
   },
 
   addNotes: function (currentTime, notes) {
@@ -19,8 +16,6 @@ Track.prototype = {
       notes: notes
     }
     this.roll.push(currentNotes)
-    console.log('in tracks addNotes. heres the roll')
-    console.log(this.roll)
   },
 
   stopRecording: function () {
@@ -36,15 +31,18 @@ Track.prototype = {
         playBackStartTime = TimeUtil.currentTime(),
         that = this;
 
-    this.interval = setInterval( function () {
-      if (currentNote <= that.roll.length) {
-        if (that.roll[currentNote].timeSlice > (TimeUtil.currentTime() - playBackStartTime)) {
-          TrackActions.addKeysGroup(that.roll[currentNote].notes)
+    that.interval = setInterval( function () {
+      // roll length minus 1 to account for last empty array pushed
+      if (currentNote < that.roll.length -  1) {
+
+        if ((TimeUtil.currentTime() - playBackStartTime) > that.roll[currentNote].timeSlice) {
+          var notes = that.roll[currentNote].notes || []
+          TrackActions.addKeysGroup(notes)
           currentNote++
         }
       } else {
         clearInterval(that.interval)
-        delete that.interval
+        delete that.interval;
       }
     }, 1)
   }

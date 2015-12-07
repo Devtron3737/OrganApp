@@ -66,20 +66,12 @@
         this.emit(CHANGE_EVENT)
       },
 
-// install  emitters and listeners
-// so, we use jquery's .emit to emit an event
-// to all listeners. in this case, its CHANGE_EVENT
-// then we have an addChangeListener method
-// this is used by views to install they're listeners
-// onto KeyStore. So now they're callbacks
-//get fired whenever theyre change_event gets emitted
-
       addChangeListener: function (callback) {
         this.on(CHANGE_EVENT, callback);
       },
 
       removeChangeListener: function (callback) {
-        this.off(CHANGE_EVENT, callback);
+        this.removeListener(CHANGE_EVENT, callback);
       }
     });
 })(this);
