@@ -5,7 +5,7 @@ var Organ = React.createClass({
         {
           Object.keys(TONES).map(function (noteName) {
             return(
-              <Key noteName={noteName} />
+              <Key key={noteName} noteName={noteName} />
             );
           })
         }
