@@ -25,7 +25,7 @@ class Api::TracksController < ApplicationController
 
   private
 
-  TRACK_FILTER = {track: [:timeSlice, notes: []]}
+  TRACK_FILTER = {roll: [:timeSlice, notes: []]}
 
   def track_params
     params.require(:trackAttrs).permit(:name, TRACK_FILTER)

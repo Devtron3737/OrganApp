@@ -1,5 +1,6 @@
-function Track (roll) {
-  this.roll = roll || [];
+function Track (attrs) {
+  this.roll = attrs ? attrs.roll : [];
+  this.name = attrs ? attrs.name : "";
 }
 
 Track.prototype = {
@@ -26,6 +27,8 @@ Track.prototype = {
     if (this.interval) {
       return;
     }
+    console.log('in tracks play')
+    console.log(this.roll)
 
     var currentNote = 0,
         playBackStartTime = TimeUtil.currentTime(),
@@ -48,10 +51,6 @@ Track.prototype = {
   },
 
   roll: function () {
-    console.log('in roll')
-    return this.roll.map( function (noteGroup) {
-      console.log(noteGroup.notes)
-      return ConvertUtil.toObj(noteGroup.notes)
-    })
+    return this.roll.slice()
   }
 }

@@ -35,15 +35,13 @@ var Recorder = React.createClass({
   },
 
   handleSave: function () {
-    console.log('in handle save')
 
     var trackAttrs = {
       name: document.getElementById('name').value,
       // track:
-      track: this.state.track.roll
+      roll: this.state.track.roll
     }
-
-    console.log(ConvertUtil.toObj(trackAttrs))
+    
     TrackActions.save(trackAttrs)
   },
 

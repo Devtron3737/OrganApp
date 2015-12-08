@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(version: 20151207210150) do
   end
 
   create_table "tracks", force: :cascade do |t|
-    t.string "name",  null: false
-    t.json   "track"
+    t.string "name", null: false
+    t.json   "roll"
   end
 
 end
