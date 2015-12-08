@@ -19,6 +19,7 @@
             tracks: tracks
           })
         }
+      })
     },
 
     save: function (trackAttrs) {

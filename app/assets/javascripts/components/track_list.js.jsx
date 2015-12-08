@@ -19,12 +19,18 @@ var TrackList = React.createClass({
   },
 
   render: function () {
-    return( 
-      <div id='track-list'>
-        this.state.tracks.map( function (track) {
-          return <TrackPlayer track={track} />
-        })
-      </div>
-    )
+    if (!this.state.tracks) {
+      return <div>Loading...</div>
+    } else {
+        return(
+          <div id='track-list'>
+            {
+              this.state.tracks.map( function (track) {
+              return <TrackPlayer track={track} />
+              })
+            }
+          </div>
+        )
+    }
   }
 })
