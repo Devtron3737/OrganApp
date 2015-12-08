@@ -4,6 +4,7 @@ var OrganApp = React.createClass({
       <div>
         <Organ />
         <Recorder />
+        <TrackList />
       </div>
     )
   }

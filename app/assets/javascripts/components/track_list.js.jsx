@@ -19,7 +19,7 @@ var TrackList = React.createClass({
   },
 
   render: function () {
-    return(
+    return( 
       <div id='track-list'>
         this.state.tracks.map( function (track) {
           return <TrackPlayer track={track} />
