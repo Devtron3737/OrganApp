@@ -20,8 +20,6 @@
             actionType: "update_tracks",
             tracks: tracks
           })
-        },
-        error: function (errors) {
         }
       })
     }
