@@ -1,9 +1,13 @@
 var OrganApp = React.createClass({
   render: function () {
     return(
-      <div>
-        <Organ />
-        <Recorder />
+      <div id='app-background'>
+        <h1 id='title'>Cool Purple Organ</h1>
+        <div id='organ-container'>
+          <Organ />
+          <Recorder />
+        </div>
+
         <TrackList />
       </div>
     )

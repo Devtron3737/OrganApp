@@ -1,0 +1,99 @@
+body, div, h1, h2, h3, head {
+  padding: 0;
+  margin: 0;
+  display: block;
+  font-size: 30px;
+  font-family: 'Amatic SC', cursive;
+}
+
+textarea:focus, input:focus{
+  outline: none;
+}
+
+#app-background {
+  height: 100vh;
+  width: 100%;
+  background-image: url('http://res.cloudinary.com/dn7rukqow/image/upload/v1449545663/jazzclub_danzdu.jpg');
+  background-size: cover;
+}
+
+#title {
+  font-size: 65px;
+  text-align: center;
+  margin: 20px;
+  color: white;
+}
+
+#organ-container {
+  background: rgba(0, 0, 0, 0.69);
+  width: 85%;
+  height: auto;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.organ {
+  height: 100px;
+  width: 825px;;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 20px;
+}
+
+.organ:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.key {
+  display: block;
+  float: left;
+  border: 1px solid white;
+  height: 80px;
+  width: 80px;
+  margin: 10px;
+  background: #990066; //purple
+  text-align: center;
+  color: white;
+}
+
+.key.active {
+  font-size: 60px;
+}
+
+#recorder-container {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 420px;
+  // background: red;
+  padding: 10px;
+}
+
+.button {
+  font-family: 'Amatic SC', cursive;
+  padding: 15px;
+  font-size: 35px;
+  border: 0;
+  background: transparent;
+  color: white;
+  margin: 20px;
+  margin-top: 0;
+}
+
+.button:hover {
+  color: red;
+}
+
+#name {
+  border: 0;
+  border-bottom: 2px solid #990066; //purple
+  font-family: 'Amatic SC', cursive;
+  font-size: 25px;
+  background: transparent;
+  width: 300px;
+  color: white;
+}

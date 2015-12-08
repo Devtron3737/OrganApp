@@ -49,10 +49,10 @@ var Recorder = React.createClass({
 
   render: function () {
     return(
-      <div>
-        <input type='button' onClick={this.handleRecord} id='record-button' value='record' />
-        <input type='button' onClick={this.handleStopRecord} id='stop-record-button'value='stop record' />
-        <input type='button' onClick={this.handlePlay} className='play-button'value='play' />
+      <div id='recorder-container'>
+        <input type='button' onClick={this.handleRecord} className='button' value='record' />
+        <input type='button' onClick={this.handleStopRecord} className='button'value='stop record' />
+        <input type='button' onClick={this.handlePlay} className='button'value='play' />
         <input
           type='text'
           onChange={this.handleChange}
@@ -60,7 +60,7 @@ var Recorder = React.createClass({
           placeholder="enter your masterpiece's name"
           value={this.state.name}
         />
-      <input type='button' onClick={this.handleSave} id='save' value='save' />
+      <input type='button' onClick={this.handleSave} className='button' value='save!' />
       </div>
     )
   }
