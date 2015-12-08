@@ -48,6 +48,10 @@ Track.prototype = {
   },
 
   roll: function () {
-    return this.roll.slice()
+    console.log('in roll')
+    return this.roll.map( function (noteGroup) {
+      console.log(noteGroup.notes)
+      return ConvertUtil.toObj(noteGroup.notes)
+    })
   }
 }

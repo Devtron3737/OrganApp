@@ -2,7 +2,8 @@ var Recorder = React.createClass({
   getInitialState: function () {
     return {
       isRecording: false,
-      track: new Track()
+      track: new Track(),
+      name: ""
     }
   },
 
@@ -29,15 +30,20 @@ var Recorder = React.createClass({
     this.state.track.play()
   },
 
+  handleChange: function () {
+    this.setState({name: document.getElementById('name').value})
+  },
+
   handleSave: function () {
     console.log('in handle save')
 
     var trackAttrs = {
-      name: document.getElementById('name').val()
+      name: document.getElementById('name').value,
+      // track:
       track: this.state.track.roll
     }
 
-    console.log(trackAttrs)
+    console.log(ConvertUtil.toObj(trackAttrs))
     TrackActions.save(trackAttrs)
   },
 
@@ -47,7 +53,14 @@ var Recorder = React.createClass({
         <input type='button' onClick={this.handleRecord} id='record-button' value='record' />
         <input type='button' onClick={this.handleStopRecord} id='stop-record-button'value='stop record' />
         <input type='button' onClick={this.handlePlay} id='play-button'value='play' />
-        <input type='text' onChange={this.handleChange} onSubmit={this.handleSave} id='name' value="enter your masterpiece's name" />
+        <input
+          type='text'
+          onChange={this.handleChange}
+          id='name'
+          placeholder="enter your masterpiece's name"
+          value={this.state.name}
+        />
+      <input type='button' onClick={this.handleSave} id='save' value='save' />
       </div>
     )
   }

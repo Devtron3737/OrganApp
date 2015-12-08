@@ -10,10 +10,14 @@
     },
 
     save: function (trackAttrs) {
+      console.log('in save')
+      console.log(JSON.stringify(trackAttrs))
       $.ajax({
-        url: "/tracks",
-        method: POST,
-        data: trackAttrs,
+        url: "/api/tracks",
+        method: 'POST',
+        contentType: 'application/json',
+        // data: trackAttrs,
+        data: JSON.stringify( {trackAttrs: trackAttrs} ),
         success: function (tracks) {
           console.log('successful save ajax')
           console.log(tracks)

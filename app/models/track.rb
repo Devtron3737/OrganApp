@@ -9,5 +9,5 @@
 
 class Track < ActiveRecord::Base
     validates :name, presence: true, uniqueness: true
-    validates :track, presence: true
+    # validates :track, presence: true
 end

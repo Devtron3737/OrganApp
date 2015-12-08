@@ -1,4 +1,4 @@
-class TracksController < ApplicationController
+class Api::TracksController < ApplicationController
   def index
     render json: Track.all
   end
@@ -9,7 +9,7 @@ class TracksController < ApplicationController
     if track.save
       render json: Track.all
     else
-      render json: {errors: track.errors.full_messages}
+      render json: {errors: track.errors.full_messages, status: 422}
     end
   end
 
@@ -17,7 +17,7 @@ class TracksController < ApplicationController
     track = Track.find(params[:id])
 
     if track.delete
-      render: {}
+      render json: {}
     else
       render json: {errors: track.errors.full_messages}
     end
@@ -25,7 +25,9 @@ class TracksController < ApplicationController
 
   private
 
+  TRACK_FILTER = {track: [:timeSlice, notes: []]}
+
   def track_params
-    params.permit(:track, :name)
+    params.require(:trackAttrs).permit(:name, TRACK_FILTER)
   end
 end
