@@ -5,8 +5,9 @@
 [heroku]: http://www.coolpurpleorgan.xyz
 
 ## Features
- * Makes use of React.js to play and record tracks
- * Save tracks using Rails back-end
+ * Use keys 'a' through 'k' to play 8 different notes
+ * Makes use of React.js to update Track List without refreshing the entire page
+ * Save tracks using AJAX post requests to a Rails back-end
 
 ## Code things
  * Throttles iteration using setInterval for accurate play back
