@@ -5,10 +5,7 @@ var TrackPlayer = React.createClass({
 
   render: function () {
     return(
-      <div className='track-player'>
-        <div>{this.props.track.name}</div>
-        <input type='button' onClick={this.handlePlay} className='play-button' value='play' />
-      </div>
+        <input type='button' onClick={this.handlePlay} className='button track' value={this.props.track.name} />
     )
   }
 })

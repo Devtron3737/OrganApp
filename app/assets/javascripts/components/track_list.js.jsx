@@ -24,6 +24,7 @@ var TrackList = React.createClass({
     } else {
         return(
           <div id='track-list'>
+            <h2 id='track-list-title'>Track List</h2>
             {
               this.state.tracks.map( function (track) {
               return <TrackPlayer track={track} />
