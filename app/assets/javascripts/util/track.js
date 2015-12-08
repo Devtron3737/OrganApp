@@ -27,8 +27,6 @@ Track.prototype = {
     if (this.interval) {
       return;
     }
-    console.log('in tracks play')
-    console.log(this.roll)
 
     var currentNote = 0,
         playBackStartTime = TimeUtil.currentTime(),
