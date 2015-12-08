@@ -11,16 +11,17 @@ textarea:focus, input:focus{
 }
 
 #app-background {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   background-image: url('http://res.cloudinary.com/dn7rukqow/image/upload/v1449545663/jazzclub_danzdu.jpg');
   background-size: cover;
+  position: relative;
+  padding-top: 20px;
 }
 
 #title {
   font-size: 65px;
   text-align: center;
-  margin: 20px;
   color: white;
 }
 
@@ -106,6 +107,7 @@ textarea:focus, input:focus{
   left: 50%;
   transform: translateX(-50%);
   padding-bottom: 35px;
+  height: auto;
 }
 
 #track-list-title {
@@ -125,4 +127,5 @@ textarea:focus, input:focus{
   padding: 0;
   margin: 0;
   margin-top: 20px;
+  display: block;
 }
