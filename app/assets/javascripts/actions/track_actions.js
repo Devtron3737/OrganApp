@@ -9,6 +9,18 @@
       })
     },
 
+    fetchTracks: function () {
+      $.ajax({
+        url: "/api/tracks",
+        method: 'GET',
+        success: function (tracks) {
+          Dispatcher.dispatch({
+            actionType: "update_tracks",
+            tracks: tracks
+          })
+        }
+    },
+
     save: function (trackAttrs) {
       $.ajax({
         url: "/api/tracks",
