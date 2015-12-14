@@ -41,13 +41,14 @@ var Recorder = React.createClass({
       // track:
       roll: this.state.track.roll
     }
-    
+
     TrackActions.save(trackAttrs)
   },
 
   render: function () {
     return(
       <div id='recorder-container'>
+        <div id='instructions'>Use keys "a" through "k" to play!</div>
         <input type='button' onClick={this.handleRecord} className='button' value='record' />
         <input type='button' onClick={this.handleStopRecord} className='button'value='stop record' />
         <input type='button' onClick={this.handlePlay} className='button'value='play' />
